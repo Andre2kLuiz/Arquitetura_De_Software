@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monolito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            background-color: #f4f4f4; /* Cor de fundo */
+            margin: 0; /* Remove margens padrão */
+            padding: 20px; /* Adiciona espaçamento ao redor */
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            flex-direction: column; /* Alinha os itens na vertical */
+            align-items: center; /* Centraliza os itens horizontalmente */
+            justify-content: center;
+        }
+
+        h1 {
+            color: #333; /* Cor do título */
+        }
+
+        .container {
+            background-color: white; /* Fundo branco para destaque */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 20px; /* Espaçamento interno */
+            margin-bottom: 20px; /* Espaçamento abaixo da div */
+            margin-left: 100px;
+            width: 300px; /* Largura fixa para organização */
+            text-align: center; /* Centraliza o texto dentro da div */
+        }
+
+        input[type="number"] {
+            padding: 10px; /* Espaçamento interno do input */
+            font-size: 16px; /* Tamanho da fonte do input */
+            border: 1px solid #ccc; /* Borda do input */
+            border-radius: 4px; /* Bordas arredondadas */
+            margin-right: 10px; /* Espaçamento à direita do input */
+            width: calc(100% - 22px); /* Largura do input */
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px; /* Espaçamento interno do botão */
+            font-size: 16px; /* Tamanho da fonte do botão */
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove borda padrão */
+            border-radius: 4px; /* Bordas arredondadas */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+            
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+        }
+
+        p {
+            font-size: 18px; /* Tamanho da fonte dos resultados */
+            color: #333; /* Cor do texto dos resultados */
+            margin: 10px 0; /* Espaçamento acima e abaixo do parágrafo */
+        }
+    </style>
+</head>
+<body>
+    <h1>Arquitetura Monolítica</h1>
+    <form action="">
+        <h2>calculadora de conversão Celsius para Fahrenheit</h2>
+        <div class="container">
+            <label for="number">Celcius</label>
+            <input type="number" name="number" id="number" placeholder="Número em Celsius">
+            <button id="btn" onclick="converter()">Calcular</button>
+        </div>
+        <div class="container"><button id="reloadButton">Recarregar Página</button></div>
+    </form>
+</body>
+<Script>
+
+    function converter(){
+        event.preventDefault();
+        let number = document.querySelector('#number').value;
+        result = number * 1.8 + 32;
+        let p = document.createElement('p');
+
+        if(result != 32){
+            p.textContent = 'resultado: ' + `°F ${result}`;
+            document.body.appendChild(p);
+        }else{
+            p.textContent = 'resultado: 0';
+            document.body.appendChild(p);
+        }
+        
+    }
+
+    document.getElementById('reloadButton').addEventListener('click', function() {
+        location.reload();  // Recarrega a página
+    });
+</Script>
+</html>

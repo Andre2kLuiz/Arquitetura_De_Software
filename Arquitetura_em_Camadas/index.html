@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="data.js" defer></script>
+    <title>Arquitetura em Camadas</title>
+</head>
+<body>
+    <h1>cadastro de usuários</h1>
+    <div class="container">
+        <form id="useForm">
+            <h2>cadastro de usuários</h2>
+            <label for="nome">Nome</label>
+            <input type="text" id="nameInput" placeholder="Nome" required>
+            <label for="date">idade</label>
+            <input type="number" id="ageInput" required>
+            <button type="submit" id="btn">Cadastrar</button>
+        </form>
+        <div class="message" id="messageContainer"></div>
+        <div class="user-list" id="userListContainer">
+            <h2>Usuários Cadastrados:</h2>
+            <ul id="userList"></ul>
+        </div>
+    </div>
+</body>
+</html>
